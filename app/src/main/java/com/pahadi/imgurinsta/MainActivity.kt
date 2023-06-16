@@ -1,6 +1,7 @@
 package com.pahadi.imgurinsta
 
 import android.os.Bundle
+import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -8,10 +9,15 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.pahadi.imgurinsta.databinding.ActivityMainBinding
+import com.pahadi.libimgur.ImgurAPI
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    companion object{
+        val TAG = "MainActivity_d"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +37,14 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        extractDataApiLibImgur()
     }
+
+    private fun extractDataApiLibImgur() {
+        val obj = ImgurAPI()
+        Log.d(TAG, "extractDataApiLibImgur: ${obj.a}")
+    }
+
+
 }
