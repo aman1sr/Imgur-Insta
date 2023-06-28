@@ -9,7 +9,6 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.pahadi.imgurinsta.databinding.ActivityMainBinding
-import com.pahadi.libimgur.ImgurAPI
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,13 +37,9 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
-        extractDataApiLibImgur()
     }
 
-    private fun extractDataApiLibImgur() {
-        val obj = ImgurAPI()
-        Log.d(TAG, "extractDataApiLibImgur: ${obj.a}")
-    }
+
 
 
 }
