@@ -1,6 +1,7 @@
 package com.pahadi.libimgur
 
 import com.pahadi.libimgur.apis.ImgurAPI
+import com.pahadi.libimgur.converters.EnumConverterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -24,6 +25,7 @@ object ImgurClient {
         Retrofit.Builder()
             .client(httpClient)
             .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(EnumConverterFactory())
             .baseUrl("https://api.imgur.com/3/")        // todo: add base url
             .build()
     }
