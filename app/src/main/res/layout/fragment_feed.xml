@@ -6,8 +6,18 @@
     tools:context=".ui.feed.FeedFragment">
 
     <TextView
+        android:id="@+id/tv_feedType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_feedRecylerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Feed Hello" />
+
+        />
+
+
 
 </FrameLayout>

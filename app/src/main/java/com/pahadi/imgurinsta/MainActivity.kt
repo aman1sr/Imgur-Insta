@@ -34,7 +34,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_hot, R.id.navigation_top
             )
         )
+        //  responsible for setting up an automatic action bar in your app, based on given Label in Frg in navigation.xml, sets it's Value
         setupActionBarWithNavController(navController, appBarConfiguration)
+
         navView.setupWithNavController(navController)
 
     }

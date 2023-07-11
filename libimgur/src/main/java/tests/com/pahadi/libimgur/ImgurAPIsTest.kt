@@ -2,6 +2,7 @@ package tests.com.pahadi.libimgur
 
 import com.pahadi.libimgur.ImgurClient
 import com.pahadi.libimgur.params.Section
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.Assert.assertNotNull
 
@@ -16,21 +17,21 @@ class ImgurAPIsTest {
 *
 * */
 @Test
-fun `get_tags_working`(){
-    val response = api.getTags().execute()
+fun `get_tags_working`()= runBlocking {
+    val response = api.getTags()
     assertNotNull(response.body())
 }
 
     @Test
-    fun `get_gallery_hot_working`(){
-    val response = api.getGallery(Section.HOT).execute()
-    assertNotNull(response.body())
-}
+    fun `get_gallery_hot_working`()= runBlocking {
+        val response = api.getGallery(Section.HOT)
+        assertNotNull(response.body())
+    }
     @Test
-   fun `get_gallery_top_working`(){
-    val response = api.getGallery(Section.TOP).execute()
-    assertNotNull(response.body())
-}
+   fun `get_gallery_top_working`() = runBlocking {
+        val response = api.getGallery(Section.TOP)
+        assertNotNull(response.body())
+    }
 
 
 

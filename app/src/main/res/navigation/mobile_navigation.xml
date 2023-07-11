@@ -9,13 +9,25 @@
         android:id="@+id/navigation_hot"
         android:name="com.pahadi.imgurinsta.ui.feed.FeedFragment"
         android:label="@string/nav_title_hot"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed" >
+        <argument
+            app:argType="string"
+            android:name="feed"
+            android:defaultValue="hot"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_top"
         android:name="com.pahadi.imgurinsta.ui.feed.FeedFragment"
         android:label="@string/nav_title_top"
-        tools:layout="@layout/fragment_feed" />
+        tools:layout="@layout/fragment_feed">
+        <argument
+            app:argType="string"
+            android:name="feed"
+            android:defaultValue="top"
+            />
+    </fragment>
 
 
 </navigation>
