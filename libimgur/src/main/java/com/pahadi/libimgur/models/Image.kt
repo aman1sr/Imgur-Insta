@@ -11,6 +11,8 @@ data class Image(
     val accountUrl: Any?,
     @Json(name = "ad_type")
     val adType: Int?,
+    @Json(name = "cover")
+    val cover: Any?,
     @Json(name = "ad_url")
     val adUrl: String?,
     @Json(name = "animated")

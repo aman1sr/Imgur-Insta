@@ -10,7 +10,6 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ImgurAPI {
-
     @GET("gallery/{section}")
     suspend fun getGallery(
         @Path("section") section : Section,
