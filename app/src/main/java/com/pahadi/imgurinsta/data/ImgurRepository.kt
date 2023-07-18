@@ -1,8 +1,7 @@
-package com.pahadi.imgurinsta.ui.data
+package com.pahadi.imgurinsta.data
 
 import com.pahadi.libimgur.ImgurClient
-import com.pahadi.libimgur.models.GalleryResponse
-import com.pahadi.libimgur.models.GalleryTagResponse
+import com.pahadi.libimgur.models.Gallery
 import com.pahadi.libimgur.models.Image
 import com.pahadi.libimgur.params.Section
 
@@ -17,6 +16,11 @@ class ImgurRepository {
     suspend fun getTopFeed(): List<Image>? {
         val response = api.getGallery(Section.TOP)
         return response?.body()?.data
+    }
+
+    suspend fun getTags(): List<Gallery>?{
+        val response = api.getTags()
+        return response.body()?.data?.galleries
     }
 
 }

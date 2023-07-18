@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import com.pahadi.imgurinsta.R
 import com.pahadi.imgurinsta.databinding.ListItemGalleryImageBinding
 import com.pahadi.libimgur.models.Image
 
@@ -44,7 +45,11 @@ class FeedRecyclerAdapter :
 
         image.cover.toString().let {
             val imgLink : String = "https://i.imgur.com/${it}.jpg"
-            holder.binding.imageView.load(imgLink)
+            holder.binding.imageView.load(imgLink){
+                placeholder(R.drawable.placeholder)
+                placeholder(R.drawable.placeholder_error)
+            }
+
             Log.d(TAG, "pos:$position>> IMG: $imgLink")
         }
 
