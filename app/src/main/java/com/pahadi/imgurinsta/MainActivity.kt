@@ -48,6 +48,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
+
         storiesViewModel.tags.observe(this){
             storiesAdapter.submitList(it)
         }

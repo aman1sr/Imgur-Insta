@@ -16,12 +16,16 @@ class ImgurAPIsTest {
 * To resolve this error, you can modify the test case name to remove the space character
 *
 * */
+
+    // For stories
 @Test
 fun `get_tags_working`()= runBlocking {
     val response = api.getTags()
     assertNotNull(response.body())
 }
 
+
+    // below 2 APIs for Bottom Tab
     @Test
     fun `get_gallery_hot_working`()= runBlocking {
         val response = api.getGallery(Section.HOT)
