@@ -5,6 +5,13 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class Image(
+    @Json(name = "is_album")
+    val is_album: Any?,
+    @Json(name = "images_count")
+    val images_count: Any?,
+    @Json(name = "images")
+    val images: List<Image>?,
+
     @Json(name = "account_id")
     val accountId: Any?,
     @Json(name = "account_url")
@@ -63,12 +70,10 @@ data class Image(
     val processing: Processing?,
     @Json(name = "score")
     val score: Any?,
-    @Json(name = "section")
-    val section: Any?,
-    @Json(name = "size")
-    val size: Int?,
+
     @Json(name = "tags")
     val tags: List<Any?>?,
+
     @Json(name = "title")
     val title: Any?,
     @Json(name = "type")

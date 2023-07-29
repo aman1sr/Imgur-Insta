@@ -7,20 +7,9 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class TagResponse(
     @Json(name = "data")
-    val `data`: Data?,
+    val `data`: Tag?,
     @Json(name = "status")
     val status: Int?,
     @Json(name = "success")
     val success: Boolean?
-) {
-
-    @JsonClass(generateAdapter = true)
-    data class Data(
-        @Json(name = "featured")
-        val featured: String?,
-        @Json(name = "galleries")
-        val galleries: List<Gallery>?,
-        @Json(name = "tags")
-        val tags: List<Tag?>?
-    )
-}
+)

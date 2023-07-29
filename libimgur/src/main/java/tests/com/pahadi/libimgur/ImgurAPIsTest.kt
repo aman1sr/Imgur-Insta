@@ -17,7 +17,14 @@ class ImgurAPIsTest {
 *
 * */
 
-    // For stories
+    // detailed Stories
+    @Test
+    fun `get_tag_detailed_stories`() = runBlocking {
+        val response = api.getTagGallery("aww")
+        assertNotNull(response.body())
+    }
+
+    // HOME stories
 @Test
 fun `get_tags_working`()= runBlocking {
     val response = api.getTags()

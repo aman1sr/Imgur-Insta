@@ -1,24 +1,20 @@
-package com.pahadi.imgurinsta
+package com.pahadi.imgurinsta.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.pahadi.imgurinsta.R
 import com.pahadi.imgurinsta.databinding.ActivityMainBinding
-import com.pahadi.imgurinsta.ui.stories.StoriesRecylerAdapter
-import com.pahadi.imgurinsta.ui.stories.StoriesViewModel
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val storiesViewModel by viewModels<StoriesViewModel>()
+    private val storiesViewModel by viewModels<HomeViewModel>()
     private val storiesAdapter = StoriesRecylerAdapter()
     companion object{
         val TAG = "MainActivity_d"

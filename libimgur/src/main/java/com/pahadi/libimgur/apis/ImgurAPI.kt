@@ -2,6 +2,7 @@ package com.pahadi.libimgur.apis
 
 import com.pahadi.libimgur.models.GalleryResponse
 import com.pahadi.libimgur.models.TagResponse
+import com.pahadi.libimgur.models.TagsResponse
 import com.pahadi.libimgur.params.Section
 import retrofit2.Response
 import retrofit2.http.GET
@@ -16,7 +17,11 @@ interface ImgurAPI {
     ): Response<GalleryResponse>
 
     @GET("tags")
-    suspend fun getTags(): Response<TagResponse>
+    suspend fun getTags(): Response<TagsResponse>
 
+    @GET("gallery/t/{tag}")
+    suspend fun getTagGallery(
+        @Path("tag") tag: String
+    ): Response<TagResponse>
 
 }
