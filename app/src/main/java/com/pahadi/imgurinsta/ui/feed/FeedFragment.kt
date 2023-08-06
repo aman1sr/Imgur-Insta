@@ -12,6 +12,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import coil.Coil
+import coil.request.ImageRequest
 import com.pahadi.imgurinsta.R
 import com.pahadi.imgurinsta.databinding.FragmentFeedBinding
 
@@ -49,6 +51,13 @@ class FeedFragment : Fragment() {
 
         
         viewModel.feed.observe(viewLifecycleOwner){
+            it.forEach { tag ->
+                val request = ImageRequest.Builder(requireActivity())
+                    .data("https://i.imgur.com/${tag.cover}.jpg")
+                    .size(resources.getDimensionPixelSize(R.dimen.story_head_image_size))
+                    .build()
+                Coil.imageLoader(requireContext()).enqueue(request)
+            }
             feedAdapter.submitList(it)
         }
 

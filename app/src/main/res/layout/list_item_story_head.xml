@@ -6,8 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 <androidx.cardview.widget.CardView
-    android:layout_width="60dp"
-    android:layout_height="60dp"
+    android:layout_width="@dimen/story_head_image_size"
+    android:layout_height="@dimen/story_head_image_size"
     app:cardCornerRadius="30dp"
     android:layout_margin="3dp"
 >

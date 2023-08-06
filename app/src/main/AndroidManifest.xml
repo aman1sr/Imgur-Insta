@@ -10,6 +10,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name=".ImgurmApp"
         android:theme="@style/Theme.ImgurInsta"
         tools:targetApi="31">
 
